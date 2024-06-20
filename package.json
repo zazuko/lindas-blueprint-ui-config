@@ -1,0 +1,22 @@
+{
+  "name": "blueprint-ui-config-initializer",
+  "version": "0.1.0",
+  "description": "Initializer for Zazuko Blueprint UI configuration",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zazuko/blueprint-ui-config-initializer.git"
+  },
+  "author": "Zazuko GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zazuko/blueprint-ui-config-initializer/issues"
+  },
+  "homepage": "https://github.com/zazuko/blueprint-ui-config-initializer#readme",
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}
