@@ -2,6 +2,7 @@
   "name": "blueprint-ui-config-initializer",
   "version": "0.1.0",
   "description": "Initializer for Zazuko Blueprint UI configuration",
+  "type": "module",
   "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/zazuko/blueprint-ui-config-initializer#readme",
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "sparql-http-client": "^3.0.0"
   }
 }
