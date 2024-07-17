@@ -1,0 +1,35 @@
+PREFIX : <http://schema.example.org/blueprint-config-creator/>
+    
+CONSTRUCT {
+    ?cls :detailGroup ?detailGroup .
+    
+    ?detailGroup :label "Info";
+	    :order 0;
+	    :detail [
+            :label ?propertylocalName ;
+            :path ?property;
+            :order 0
+        ] .
+
+} WHERE {
+	{
+		SELECT * WHERE {
+		    {
+		        SELECT distinct ?cls ?property WHERE {
+		            ?subject a ?cls .
+		            ?subject ?property ?object .
+		            filter(isLITERAL(?object))
+		        }
+		    }
+		    bind(replace(str(?property), "^.*[/#]", "") AS ?propertylocalName)
+		    bind(replace(str(?cls), "^.*[/#]", "") AS ?clslocalName)
+		    
+		    bind(concat(?clslocalName, "-detailgroup-info-", encode_for_uri(str(?cls))) AS ?localDetailGroupId)
+		    bind(iri(concat("http://data.example.org/blueprint-config-creator/", ?localDetailGroupId)) AS ?detailGroup)
+    
+VALUES ?cls {%%values-cls%%
+}
+
+		} order by ?clslocalName ?cls ?propertylocalName ?property
+	}
+}
