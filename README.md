@@ -44,6 +44,7 @@ Sample procedure:
 4) Select the links you want from the candidate links:
    * Copy the file *_links.ttl* to *links.ttl* (removing the leading underscore character)
    * Edit *links.ttl* and comment out the links you don't want
+   * Optionally, you can also modify the label
 5) Run command `fetch-details`
    * This will query the candidate details from `SPARQL_ENDPOINT`
    * Candidate details are all attributes of any instance of any of the classes from the file *classes.ttl*
