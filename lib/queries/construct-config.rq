@@ -1,0 +1,94 @@
+PREFIX : <http://schema.example.org/blueprint-config-creator/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX blueprintMetaShapes: <https://ld.flux.zazuko.com/shapes/metadata/>
+PREFIX blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/>
+PREFIX blueprint: <https://flux.described.at/>
+
+CONSTRUCT {
+    ?cls <https://flux.described.at/showIn> <https://flux.described.at/UI> .
+    
+    ?clsMetadataShape a blueprintMetaShapes:ClassMetadataShape ;
+        rdfs:label ?label ;
+        <https://flux.described.at/faIcon> ?clsIcon ;
+        <https://flux.described.at/colorIndex> ?clsColorIndex ;
+        <https://flux.described.at/searchPrio> ?clsSearchPrio ;
+        sh:targetNode ?cls .
+    
+    ?link a sh:PropertyShape, blueprint:Link ;
+        sh:name ?linkLabel ;
+        sh:targetClass ?cls ;
+        sh:class ?toCls ;
+        sh:path ?linkPath .
+        
+    ?detailGroup a blueprintMetaShapes:ClassDetailShape ;
+        rdfs:label ?detailGroupLabel ;
+        sh:order ?detailGroupOrder .
+    
+    ?detailShape a blueprintMetaShapes:ClassDetailShape ;
+        rdfs:label ?detailLabel ;
+        sh:path ?detailPath ;
+        sh:order ?detailOrder ;
+        blueprint:showAs blueprintMetaShapes:Plain ;
+        sh:targetClass ?cls ;
+        sh:group ?detailGroup .
+} 
+WHERE {
+	{
+		SELECT * WHERE {
+
+		    {
+		        ?cls a :Class;
+		        	:label ?label .
+		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", encode_for_uri(str(?cls)))) AS ?clsMetadataShape)
+		        
+		    	optional { ?cls :icon ?icon }
+		    	bind(coalesce(?icon, "far fa-circle") AS ?clsIcon)
+		        
+		        optional { ?cls :colorIndex ?colorIndex }
+		    	bind(coalesce(?colorIndex, 1) AS ?clsColorIndex)
+		        
+		        optional { ?cls :searchPrio ?searchPrio }
+		    	bind(coalesce(?searchPrio, 1) AS ?clsSearchPrio)
+		    }
+		    union
+		    {
+		        ?cls :link [
+		            :label ?linkLabel;
+		            :to ?toCls;
+		            :path ?linkPath
+		        ] .
+		        bind(concat(encode_for_uri(str(?cls)), "-", encode_for_uri(str(?linkPath)),"-", encode_for_uri(str(?toCls))) AS ?localLinkId)
+		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localLinkId)) AS ?link)
+		    }
+		    union
+		    {
+		        ?cls :detailGroup [
+		            :label ?detailGroupLabel ;
+		            :detail ?detail
+		        ] .
+		        
+		        ?detail :label ?detailLabel ;
+		                :path ?detailPath .
+		        
+		        bind(concat(encode_for_uri(str(?cls)), "-", encode_for_uri(str(?detailPath))) AS ?localDetailId)
+		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localDetailId)) AS ?detailShape)
+		        
+		        optional { ?detail :order ?order }
+		    	bind(coalesce(?order, 0) AS ?detailOrder)
+		    }
+		    union
+		    {
+		        ?cls :detailGroup [
+		            :label ?detailGroupLabel ;
+		            :order ?detailGroupOrder
+		        ]
+		    }
+		    bind(replace(str(?cls), "^.*[/#]", "") AS ?clsLocalName)
+		    bind(concat(encode_for_uri(str(?cls)), "-detailgroup-", encode_for_uri(?detailGroupLabel)) AS ?localDetailGroupId)
+		    bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localDetailGroupId)) AS ?detailGroup)
+		    
+		} order by ?clsLocalName ?cls ?detailGroupLabel ?detailLabel ?detailPath ?linkLabel ?linkPath ?toCls
+	}
+}
