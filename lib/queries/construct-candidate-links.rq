@@ -1,4 +1,4 @@
-PREFIX : <http://schema.example.org/blueprint-config-creator/>
+PREFIX : <http://schema.example.org/blueprint-ui-config-initializer/>
     
 CONSTRUCT {
     ?cls :link [

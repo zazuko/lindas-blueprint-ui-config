@@ -1,20 +1,19 @@
-PREFIX : <http://schema.example.org/blueprint-config-creator/>
+PREFIX : <http://schema.example.org/blueprint-ui-config-initializer/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX blueprintMetaShapes: <https://ld.flux.zazuko.com/shapes/metadata/>
-PREFIX blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/>
 PREFIX blueprint: <https://flux.described.at/>
 
 CONSTRUCT {
-    ?cls <https://flux.described.at/showIn> <https://flux.described.at/UI> .
+    ?cls blueprint:showIn blueprint:UI .
     
     ?clsMetadataShape a blueprintMetaShapes:ClassMetadataShape ;
         rdfs:label ?label ;
-        <https://flux.described.at/faIcon> ?clsIcon ;
-        <https://flux.described.at/colorIndex> ?clsColorIndex ;
-        <https://flux.described.at/searchPrio> ?clsSearchPrio ;
-        sh:targetNode ?cls .
+        sh:targetNode ?cls ;
+        blueprint:faIcon ?clsIcon ;
+        blueprint:colorIndex ?clsColorIndex ;
+        blueprint:searchPrio ?clsSearchPrio .
     
     ?link a sh:PropertyShape, blueprint:Link ;
         sh:name ?linkLabel ;
@@ -41,7 +40,7 @@ WHERE {
 		    {
 		        ?cls a :Class;
 		        	:label ?label .
-		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", encode_for_uri(str(?cls)))) AS ?clsMetadataShape)
+		        bind(iri(concat("http://data.example.org/blueprint-ui-config/app/class-metadata-shape/", encode_for_uri(str(?cls)))) AS ?clsMetadataShape)
 		        
 		    	optional { ?cls :icon ?icon }
 		    	bind(coalesce(?icon, "far fa-circle") AS ?clsIcon)
@@ -60,7 +59,7 @@ WHERE {
 		            :path ?linkPath
 		        ] .
 		        bind(concat(encode_for_uri(str(?cls)), "-", encode_for_uri(str(?linkPath)),"-", encode_for_uri(str(?toCls))) AS ?localLinkId)
-		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localLinkId)) AS ?link)
+		        bind(iri(concat("http://data.example.org/blueprint-ui-config/app/link/", ?localLinkId)) AS ?link)
 		    }
 		    union
 		    {
@@ -73,7 +72,7 @@ WHERE {
 		                :path ?detailPath .
 		        
 		        bind(concat(encode_for_uri(str(?cls)), "-", encode_for_uri(str(?detailPath))) AS ?localDetailId)
-		        bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localDetailId)) AS ?detailShape)
+		        bind(iri(concat("http://data.example.org/blueprint-ui-config/app/class-detail-shape/", ?localDetailId)) AS ?detailShape)
 		        
 		        optional { ?detail :order ?order }
 		    	bind(coalesce(?order, 0) AS ?detailOrder)
@@ -87,7 +86,7 @@ WHERE {
 		    }
 		    bind(replace(str(?cls), "^.*[/#]", "") AS ?clsLocalName)
 		    bind(concat(encode_for_uri(str(?cls)), "-detailgroup-", encode_for_uri(?detailGroupLabel)) AS ?localDetailGroupId)
-		    bind(iri(concat("https://ld.flux.zazuko.com/shapes/metadata/", ?localDetailGroupId)) AS ?detailGroup)
+		    bind(iri(concat("http://data.example.org/blueprint-ui-config/app/class-detail-group/", ?localDetailGroupId)) AS ?detailGroup)
 		    
 		} order by ?clsLocalName ?cls ?detailGroupLabel ?detailLabel ?detailPath ?linkLabel ?linkPath ?toCls
 	}

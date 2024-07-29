@@ -1,4 +1,4 @@
-PREFIX : <http://schema.example.org/blueprint-config-creator/>
+PREFIX : <http://schema.example.org/blueprint-ui-config-initializer/>
     
 CONSTRUCT {
     ?cls :detailGroup ?detailGroup .
@@ -24,8 +24,8 @@ CONSTRUCT {
 		    bind(replace(str(?property), "^.*[/#]", "") AS ?propertylocalName)
 		    bind(replace(str(?cls), "^.*[/#]", "") AS ?clslocalName)
 		    
-		    bind(concat(?clslocalName, "-detailgroup-info-", encode_for_uri(str(?cls))) AS ?localDetailGroupId)
-		    bind(iri(concat("http://data.example.org/blueprint-config-creator/", ?localDetailGroupId)) AS ?detailGroup)
+		    bind(concat(?clslocalName, "-info-", encode_for_uri(str(?cls))) AS ?localDetailGroupId)
+		    bind(iri(concat("http://data.example.org/blueprint-ui-config-initializer/detailgroup/", ?localDetailGroupId)) AS ?detailGroup)
     
 VALUES ?cls {%%values-cls%%
 }
