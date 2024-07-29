@@ -1,6 +1,6 @@
 # blueprint-ui-config-initializer
 
-Initializer for Zazuko Blueprint UI configuration
+Initializer for [Zazuko Blueprint](https://github.com/zazuko/blueprint) UI configuration.
 
 
 ## Install
@@ -13,7 +13,14 @@ npm ci
 ## Run
 
 ```
-node cli.js
+node cli.js [command]
+```
+
+
+To have the SPARQL queries printed on the console, you can set `DEBUG=sparql`:
+
+```
+DEBUG=sparql node cli.js fetch-classes
 ```
 
 
@@ -21,11 +28,35 @@ node cli.js
 
 Sample procedure:
 
-0) Set environment variables: `SPARQL_ENDPOINT`, `SPARQL_USER`, `SPARQL_PASS`
-1) Run `fetch-classes`. By default, this will write the candidate classes to the file *_classes.ttl*
-2) Copy the file *_classes.ttl* to *classes.ttl* (removing the leading underscore character). Edit *classes.ttl*, comment out the classes you don't want. You can also modify the label, icon, ...
-3) Run `fetch-links`. By default, this will write the candidate links to the file *_links.ttl*
-4) ...
+0) Set environment variables:
+   * `SPARQL_ENDPOINT`, `SPARQL_USER`, `SPARQL_PASS`
+1) Run command `fetch-classes`
+   * This will query the candidate classes from `SPARQL_ENDPOINT`
+   * Writes the candidate classes to the file *_classes.ttl* by default
+2) Select the classes you want from the candidate classes:
+   * Copy the file *_classes.ttl* to *classes.ttl* (removing the leading underscore character)
+   * Edit *classes.ttl* and comment out the classes you don't want
+   * Optionally, you can also modify the label, icon, colorIndex and searchPrio
+3) Run command `fetch-links`
+   * This will query the candidate links from `SPARQL_ENDPOINT`
+   * Candidate links are all links between any instance of any of the classes from the file *classes.ttl*
+   * Writes the candidate links to the file *_links.ttl* by default
+4) Select the links you want from the candidate links:
+   * Copy the file *_links.ttl* to *links.ttl* (removing the leading underscore character)
+   * Edit *links.ttl* and comment out the links you don't want
+5) Run command `fetch-details`
+   * This will query the candidate details from `SPARQL_ENDPOINT`
+   * Candidate details are all attributes of any instance of any of the classes from the file *classes.ttl*
+   * Writes the candidate details to the file *_details.ttl* by default
+6) Select the details you want from the candidate details:
+   * Copy the file *_details.ttl* to *details.ttl* (removing the leading underscore character)
+   * Edit *details.ttl* and comment out the details you don't want
+   * Optionally, you can also modify the label and order
+7) Run command `generate-config`
+   * This will combine your selections from *classes.ttl*, *links.ttl* and *details.ttl*
+   * Writes the generated Blueprint UI configuration to the file *_blueprint-ui-config.ttl* by default
+
+Commenting out (instead of deleting) the classes, links and details that you don't want to see in Blueprint is recommended. This has the advantage that candidate TTL files can be re-generated at a later point and compared with a previous version kept under version control.
 
 
 ### Commands overview
@@ -40,4 +71,4 @@ Sample procedure:
 
 To see the options for a specific command, type `node cli.js help <command>`
 
-e.g. `node cli.js help fetch-classes` will show information concerning the `fetch-classes` command
+For example `node cli.js help fetch-classes` will show information concerning the `fetch-classes` command
