@@ -72,3 +72,8 @@ Commenting out (instead of deleting) the classes, links and details that you don
 To see the options for a specific command, type `node cli.js help <command>`
 
 For example `node cli.js help fetch-classes` will show information concerning the `fetch-classes` command
+
+
+## Customization of the initializer
+
+This initialization is based on running SPARQL queries on your data. You can find these queries in the `lib/queries` folder, in case you want to modify them.
