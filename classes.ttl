@@ -1,0 +1,25 @@
+@prefix : <http://schema.example.org/blueprint-ui-config-initializer/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://schema.org/GovernmentOrganization> a :Class ;
+   :label "Organization" ;
+   :icon "fas fa-sitemap" ;
+   :colorIndex 1 ;
+   :searchPrio 1 .
+<http://schema.org/OrganizationRole> a :Class ;
+   :label "Role" ;
+   :icon "fas fa-users" ;
+   :colorIndex 8 ;
+   :searchPrio 1 .
+<http://schema.org/Person> a :Class ;
+   :label "Person" ;
+   :icon "fas fa-user" ;
+   :colorIndex 7 ;
+   :searchPrio 1 .
+# <http://schema.org/PostalAddress> a :Class ;
+#    :label "PostalAddress" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .

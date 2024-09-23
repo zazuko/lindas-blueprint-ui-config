@@ -1,0 +1,38 @@
+@prefix : <http://schema.example.org/blueprint-ui-config-initializer/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix blueprintMetaShapes: <https://ld.flux.zazuko.com/shapes/metadata/> .
+@prefix blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/> .
+@prefix blueprint: <https://flux.described.at/> .
+
+<http://schema.org/GovernmentOrganization> :link [
+		:label "parentOrganization" ;
+		:to <http://schema.org/GovernmentOrganization> ;
+		:path <http://schema.org/parentOrganization> ;
+	], [
+		:label "subOrganization" ;
+		:to <http://schema.org/GovernmentOrganization> ;
+		:path <http://schema.org/subOrganization> ;
+	], [
+		:label "member" ;
+		:to <http://schema.org/OrganizationRole> ;
+		:path <http://schema.org/member> ;
+	] .
+
+<http://schema.org/OrganizationRole> :link [
+		:label "memberOf" ;
+		:to <http://schema.org/GovernmentOrganization> ;
+		:path <http://schema.org/memberOf> ;
+	], [
+		:label "member" ;
+		:to <http://schema.org/Person> ;
+		:path <http://schema.org/member> ;
+	] .
+
+<http://schema.org/Person> :link [
+		:label "memberOf" ;
+		:to <http://schema.org/OrganizationRole> ;
+		:path <http://schema.org/memberOf> ;
+	] .
+

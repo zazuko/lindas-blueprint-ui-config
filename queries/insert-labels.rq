@@ -1,0 +1,19 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+insert {
+    graph <http://example.org/graph/labels> {
+        ?s rdfs:label ?name .
+    }
+} where {
+    graph<https://lindas.admin.ch/fch/staatskalender> {
+        {
+            ?s <http://schema.org/name> ?name .
+        }
+        union
+        {
+            ?s a <http://schema.org/Person> .
+            ?s <http://schema.org/familyName> ?familyName .
+            ?s <http://schema.org/givenName> ?givenName .
+            BIND(CONCAT(?familyName, " ", ?givenName) AS ?name) .
+        }        
+    }
+}

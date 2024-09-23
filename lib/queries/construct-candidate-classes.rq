@@ -13,6 +13,10 @@ construct {
 where {
     {
         select distinct ?cls ?localName where {
+          VALUES ?g {
+            <https://lindas.admin.ch/fch/staatskalender>
+          }
+          GRAPH ?g {
             ?subject a ?cls .
             bind(replace(str(?cls), "^.*[/#]", "") AS ?localName)
             MINUS {
@@ -50,8 +54,9 @@ where {
                     <https://ld.flux.zazuko.com/shapes/metadata/ClassShape>
                     <https://ld.flux.zazuko.com/shapes/metadata/ClassMetadataShape>            
                     <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape>
-                } 
+                }
             }
+          }
         } order by ?localName ?cls
     }      
 }

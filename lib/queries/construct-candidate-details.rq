@@ -16,9 +16,14 @@ CONSTRUCT {
 		SELECT * WHERE {
 		    {
 		        SELECT distinct ?cls ?property WHERE {
-		            ?subject a ?cls .
-		            ?subject ?property ?object .
-		            filter(isLITERAL(?object))
+					VALUES ?g {
+						<https://lindas.admin.ch/fch/staatskalender>
+					}
+					GRAPH ?g {
+						?subject a ?cls .
+						?subject ?property ?object .
+						filter(isLITERAL(?object))
+					}
 		        }
 		    }
 		    bind(replace(str(?property), "^.*[/#]", "") AS ?propertylocalName)

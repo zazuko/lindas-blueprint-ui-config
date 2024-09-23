@@ -1,0 +1,26 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Graphs of interest\n\nThe named-graphs we are intersted in:\n\n- https://lindas.admin.ch/fch/staatskalender",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT ?g ?cls (COUNT(?s) AS ?count) WHERE {\n  GRAPH ?g {\n    ?s a ?cls\n  }\n} GROUP BY ?g  ?cls\nORDER BY ?g ?cls\n\nVALUES ?g {\n    <https://lindas.admin.ch/fch/staatskalender>\n}\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Classes of interest\n\nThe original `construct-candidate-classes.rq` query runs into query timeout (after 2 minutes).\n\nTherefore, lets only consider the graphs of interest:\n```\nVALUES ?g {\n    <https://lindas.admin.ch/fch/staatskalender>\n}\n```",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX : <http://schema.example.org/blueprint-ui-config-initializer/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n\nconstruct {\n\t?cls a :Class ;\n    \t:label ?localName ;\n    \t:icon \"far fa-circle\" ;\n        :colorIndex 1 ;\n        :searchPrio 1 .\n}\nwhere {\n    {\n        select distinct ?cls ?localName where {\n          VALUES ?g {\n            <https://lindas.admin.ch/fch/staatskalender>\n          }\n          GRAPH ?g {\n            ?subject a ?cls .\n            bind(replace(str(?cls), \"^.*[/#]\", \"\") AS ?localName)\n            MINUS {\n                # --- blocklist ---\n                VALUES ?cls {\n                    rdf:Property\n                    owl:TransitiveProperty\n                    owl:SymmetricProperty\n                    rdf:List\n                    rdfs:Class\n                    rdfs:Datatype\n                    rdfs:ContainerMembershipProperty\n                    # -----------------------------------\n                    <http://www.w3.org/ns/shacl#NodeShape>\n                    <http://www.w3.org/ns/shacl#PropertyShape>\n                    <http://www.w3.org/ns/shacl#PropertyGroup>\n                    <http://www.w3.org/ns/shacl#Group>\n                    # -----------------------------------\n                    <http://www.w3.org/ns/prov#Activity>\n                    <https://barnard-prov.described.at/Codebase>\n                    <https://barnard-prov.described.at/PipelineRunCollection>\n                    <https://barnard-prov.described.at/Commit>\n                    <https://barnard-prov.described.at/PipelineRun>            \n                    <https://barnard-prov.described.at/Job>\n                    # -----------------------------------\n                    <https://flux.described.at/Detail>\n                    <https://flux.described.at/Link>\n                    <https://flux.described.at/CompositionToNodeLink>\n                    <https://flux.described.at/Aggregate>\n                    <https://flux.described.at/Composition>            \n                    <https://flux.described.at/Hierarchy>\n                    <https://flux.described.at/Container>\n                    <https://flux.described.at/ConnectionPoint>\n                    # -----------------------------------\n                    <https://ld.flux.zazuko.com/shapes/metadata/ClassShape>\n                    <https://ld.flux.zazuko.com/shapes/metadata/ClassMetadataShape>            \n                    <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape>\n                } \n            }\n          }\n        } order by ?localName ?cls\n    }      \n}",
+    "metadata": {}
+  }
+]

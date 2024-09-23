@@ -11,9 +11,14 @@ CONSTRUCT {
 		SELECT * WHERE {
 		    {
 		        SELECT distinct ?cls ?property ?linktype WHERE {
-		            ?subject a ?cls .
-		            ?subject ?property ?object .
-		            ?object a ?linktype .
+					VALUES ?g {
+						<https://lindas.admin.ch/fch/staatskalender>
+					}
+					GRAPH ?g {
+						?subject a ?cls .
+						?subject ?property ?object .
+						?object a ?linktype .
+					}
 		        }
 		    }
 		    bind(replace(str(?cls), "^.*[/#]", "") AS ?clsLocalName)

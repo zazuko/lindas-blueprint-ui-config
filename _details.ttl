@@ -1,0 +1,50 @@
+@prefix : <http://schema.example.org/blueprint-ui-config-initializer/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix blueprintMetaShapes: <https://ld.flux.zazuko.com/shapes/metadata/> .
+@prefix blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/> .
+@prefix blueprint: <https://flux.described.at/> .
+
+<http://schema.org/GovernmentOrganization> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "alternateName" ;
+		:order 0 ;
+		:path <http://schema.org/alternateName> ;
+	], [
+		:label "name" ;
+		:order 0 ;
+		:path <http://schema.org/name> ;
+	] .
+
+<http://schema.org/OrganizationRole> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "name" ;
+		:order 0 ;
+		:path <http://schema.org/name> ;
+	] .
+
+<http://schema.org/Person> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Person-info-http%3A%2F%2Fschema.org%2FPerson> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/Person-info-http%3A%2F%2Fschema.org%2FPerson> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "familyName" ;
+		:order 0 ;
+		:path <http://schema.org/familyName> ;
+	], [
+		:label "givenName" ;
+		:order 0 ;
+		:path <http://schema.org/givenName> ;
+	], [
+		:label "telephone" ;
+		:order 0 ;
+		:path <http://schema.org/telephone> ;
+	] .
+
