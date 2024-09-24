@@ -1,0 +1,65 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bp: <https://flux.described.at/>
+PREFIX data: <http://data.example.org//blueprint/app/>
+
+
+bp:Aggregate a rdfs:Class ;
+    rdfs:label "Aggregate" ;
+    rdfs:comment "An aggregate is a collection of things, such as a list of items, a set of items, or a group of items." ;
+.
+
+bp:Composition a rdfs:Class ;
+    rdfs:subClassOf bp:Aggregate ;
+    rdfs:label "Composition" ;
+    rdfs:comment "A composition is a collection of things, that compose a higher level thing." ;
+.
+
+bp:Container a rdfs:Class ;
+    rdfs:subClassOf bp:Aggregate ;
+    rdfs:label "Container" ;
+    rdfs:comment "A container is a collection of things, that are contained in a another thing but it is not composed by them." ;
+.
+
+
+##  Organization hierarchy
+data:OrganizationHierarchyShape a sh:NodeShape ;
+    rdfs:label "Organization";
+    sh:targetClass <http://schema.org/GovernmentOrganization>;
+    sh:group data:OrganizationTree ;
+    sh:property [
+        sh:name " ";
+        sh:path [sh:inversePath <http://schema.org/memberOf>] ;
+        sh:node data:RoleHierarchyShape ;
+    ]
+# ATM recursion is not working - https://github.com/zazuko/blueprint/issues/18
+    # [
+    #     sh:name " ";
+    #     sh:path [sh:inversePath <http://schema.org/parentOrganization>] ;
+    #     sh:node data:OrganizationHierarchyShape ;
+    # ]    
+.
+
+data:RoleHierarchyShape a sh:NodeShape ;
+    rdfs:label "Organization";
+    sh:targetClass <http://schema.org/OrganizationRole>;
+    sh:group data:OrganizationTree ;
+    sh:property [
+        sh:name " ";
+        sh:path [sh:inversePath <http://schema.org/memberOf>] ;
+        sh:node data:PersonHierarchyShape ;
+    ]
+.
+
+data:PersonHierarchyShape a sh:NodeShape ;
+    rdfs:label "Organization";
+    sh:targetClass <http://schema.org/Person>;
+    sh:group data:OrganizationTree ;
+.
+
+data:OrganizationTree a sh:Group, bp:Hierarchy, bp:Container ;
+    rdfs:label "Organizations" ;
+    rdfs:comment "Information about People and Organization." ;
+    bp:hasRoot data:OrganizationHierarchyShape ;
+.
