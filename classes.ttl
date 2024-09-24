@@ -5,7 +5,7 @@
 
 <http://schema.org/GovernmentOrganization> a :Class ;
    :label "Organization" ;
-   :icon "fas fa-sitemap" ;
+   :icon "fas fa-building" ;
    :colorIndex 1 ;
    :searchPrio 1 .
 <http://schema.org/OrganizationRole> a :Class ;

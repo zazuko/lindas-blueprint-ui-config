@@ -11,11 +11,11 @@
 <http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> :label "Info" ;
 	:order 0 ;
 	:detail [
-		:label "alternateName" ;
-		:order 0 ;
+		:label "Alternate Name" ;
+		:order 1 ;
 		:path <http://schema.org/alternateName> ;
 	], [
-		:label "name" ;
+		:label "Name" ;
 		:order 0 ;
 		:path <http://schema.org/name> ;
 	] .
@@ -25,7 +25,7 @@
 <http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> :label "Info" ;
 	:order 0 ;
 	:detail [
-		:label "name" ;
+		:label "Name" ;
 		:order 0 ;
 		:path <http://schema.org/name> ;
 	] .
@@ -35,16 +35,16 @@
 <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Person-info-http%3A%2F%2Fschema.org%2FPerson> :label "Info" ;
 	:order 0 ;
 	:detail [
-		:label "familyName" ;
+		:label "Family Name" ;
 		:order 0 ;
 		:path <http://schema.org/familyName> ;
 	], [
-		:label "givenName" ;
-		:order 0 ;
+		:label "Given Name" ;
+		:order 1 ;
 		:path <http://schema.org/givenName> ;
 	], [
-		:label "telephone" ;
-		:order 0 ;
+		:label "Telephone" ;
+		:order 2 ;
 		:path <http://schema.org/telephone> ;
 	] .
 
