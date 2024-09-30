@@ -2,13 +2,25 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Graphs of interest\n\nThe named-graphs we are intersted in:\n\n- https://lindas.admin.ch/fch/staatskalender",
+    "value": "## Graphs of interest",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "SELECT ?g ?cls (COUNT(?s) AS ?count) WHERE {\n  GRAPH ?g {\n    ?s a ?cls\n  }\n} GROUP BY ?g  ?cls\nORDER BY ?g ?cls\n\nVALUES ?g {\n    <https://lindas.admin.ch/fch/staatskalender>\n}\n",
+    "value": "SELECT distinct ?g WHERE {\n  GRAPH ?g {\n  }\n}\nORDER BY ?g",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "The named-graphs we are intersted in:\n\n- https://lindas.admin.ch/fch/staatskalender\n- https://lindas.admin.ch/sbb/nova",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT ?g ?cls (COUNT(?s) AS ?count) WHERE {\n  GRAPH ?g {\n    ?s a ?cls\n  }\n} GROUP BY ?g  ?cls\nORDER BY ?g ?cls\n\nVALUES ?g {\n    # <https://lindas.admin.ch/fch/staatskalender>\n    <https://lindas.admin.ch/sbb/nova>\n}\n",
     "metadata": {}
   },
   {
@@ -45,6 +57,30 @@
     "kind": 2,
     "language": "sparql",
     "value": "describe * where {\n    select * where {\n        ?org a <http://schema.org/GovernmentOrganization> .\n        ?subOrg1 <http://schema.org/parentOrganization> ?org .\n        ?subOrg2 <http://schema.org/parentOrganization> ?subOrg1 .\n        ?role0 <http://schema.org/memberOf> ?org .\n        ?role1 <http://schema.org/memberOf> ?subOrg1 .\n        ?role2 <http://schema.org/memberOf> ?subOrg2 .\n        ?person0 <http://schema.org/memberOf> ?role0 .\n        ?person1 <http://schema.org/memberOf> ?role1 .\n        ?person2 <http://schema.org/memberOf> ?role2 .\n    } limit 1\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Nova\n\nSome zones don't have a label ...",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nselect ?p (count(distinct ?zone) AS ?zoneCount) where {    \n    ?zone a <https://lod.opentransportdata.swiss/vocab/Zone> .\n\n    ?zone ?p ?o .\n    VALUES ?p {\n        rdfs:label\n        <http://schema.org/identifier>\n    }\n}\ngroup by ?p",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Construct the missing labels ...",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n# select (count(distinct ?zone) AS ?zoneCount) where {\nCONSTRUCT {\n    ?zone rdfs:label ?identifier .\n} WHERE {\n    ?zone a <https://lod.opentransportdata.swiss/vocab/Zone> .\n    ?zone <http://schema.org/identifier> ?identifier .\n\n    MINUS {\n        ?zone rdfs:label ?label .\n    }\n}",
     "metadata": {}
   }
 ]

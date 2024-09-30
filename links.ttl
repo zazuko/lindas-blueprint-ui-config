@@ -30,9 +30,39 @@
 	# 	:path <http://schema.org/member> ;
 	] .
 
+<https://lod.opentransportdata.swiss/vocab/Zone> :link [
+		:label "provider" ;
+		:to <http://schema.org/Organization> ;
+		:path <http://schema.org/provider> ;
+	# ], [
+	# 	:label "alliance" ;
+	# 	:to <https://lod.opentransportdata.swiss/vocab/Alliance> ;
+	# 	:path <https://lod.opentransportdata.swiss/vocab/alliance> ;
+	], [
+		:label "zoningPlan" ;
+		:to <https://lod.opentransportdata.swiss/vocab/ZoningPlan> ;
+		:path <https://lod.opentransportdata.swiss/vocab/zoningPlan> ;
+	] .
+
 <http://schema.org/Person> :link [
 		:label "memberOf" ;
 		:to <http://schema.org/OrganizationRole> ;
 		:path <http://schema.org/memberOf> ;
+	] .
+
+<https://lod.opentransportdata.swiss/vocab/ZoningPlan> :link [
+		:label "alliance" ;
+		:to <https://lod.opentransportdata.swiss/vocab/Alliance> ;
+		:path <https://lod.opentransportdata.swiss/vocab/alliance> ;
+	# ], [
+	# 	:label "zone" ;
+	# 	:to <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	# 	:path <https://lod.opentransportdata.swiss/vocab/zone> ;
+	] .
+
+<https://lod.opentransportdata.swiss/vocab/LocalNetwork> :link [
+		:label "zoningPlan" ;
+		:to <https://lod.opentransportdata.swiss/vocab/ZoningPlan> ;
+		:path <https://lod.opentransportdata.swiss/vocab/zoningPlan> ;
 	] .
 

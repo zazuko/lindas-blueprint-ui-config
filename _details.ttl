@@ -6,6 +6,16 @@
 @prefix blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/> .
 @prefix blueprint: <https://flux.described.at/> .
 
+<https://lod.opentransportdata.swiss/vocab/Alliance> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Alliance-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/Alliance-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "label" ;
+		:order 0 ;
+		:path rdfs:label ;
+	] .
+
 <http://schema.org/GovernmentOrganization> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> .
 
 <http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> :label "Info" ;
@@ -18,6 +28,58 @@
 		:label "name" ;
 		:order 0 ;
 		:path <http://schema.org/name> ;
+	] .
+
+<https://lod.opentransportdata.swiss/vocab/LocalNetwork> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/LocalNetwork-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/LocalNetwork-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "alliance" ;
+		:order 0 ;
+		:path <https://lod.opentransportdata.swiss/vocab/alliance> ;
+	], [
+		:label "identifier" ;
+		:order 0 ;
+		:path <http://schema.org/identifier> ;
+	], [
+		:label "label" ;
+		:order 0 ;
+		:path rdfs:label ;
+	] .
+
+<http://schema.org/Organization> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Organization-info-http%3A%2F%2Fschema.org%2FOrganization> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/Organization-info-http%3A%2F%2Fschema.org%2FOrganization> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "alternateName" ;
+		:order 0 ;
+		:path <http://schema.org/alternateName> ;
+	], [
+		:label "identifier" ;
+		:order 0 ;
+		:path <http://schema.org/identifier> ;
+	], [
+		:label "label" ;
+		:order 0 ;
+		:path rdfs:label ;
+	], [
+		:label "name" ;
+		:order 0 ;
+		:path <http://www.w3.org/2006/vcard/ns#name> ;
+	], [
+		:label "printCustomerCode" ;
+		:order 0 ;
+		:path <https://lod.opentransportdata.swiss/vocab/printCustomerCode> ;
+	], [
+		:label "printLabel" ;
+		:order 0 ;
+		:path <https://lod.opentransportdata.swiss/vocab/printLabel> ;
+	], [
+		:label "screenLabel" ;
+		:order 0 ;
+		:path <https://lod.opentransportdata.swiss/vocab/screenLabel> ;
 	] .
 
 <http://schema.org/OrganizationRole> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> .
@@ -46,5 +108,33 @@
 		:label "telephone" ;
 		:order 0 ;
 		:path <http://schema.org/telephone> ;
+	] .
+
+<https://lod.opentransportdata.swiss/vocab/Zone> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Zone-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/Zone-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "identifier" ;
+		:order 0 ;
+		:path <http://schema.org/identifier> ;
+	], [
+		:label "label" ;
+		:order 0 ;
+		:path rdfs:label ;
+	], [
+		:label "zoningPriceFactor" ;
+		:order 0 ;
+		:path <https://lod.opentransportdata.swiss/vocab/zoningPriceFactor> ;
+	] .
+
+<https://lod.opentransportdata.swiss/vocab/ZoningPlan> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/ZoningPlan-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan> .
+
+<http://data.example.org/blueprint-ui-config-initializer/detailgroup/ZoningPlan-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan> :label "Info" ;
+	:order 0 ;
+	:detail [
+		:label "label" ;
+		:order 0 ;
+		:path rdfs:label ;
 	] .
 

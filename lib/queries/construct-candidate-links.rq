@@ -13,6 +13,7 @@ CONSTRUCT {
 		        SELECT distinct ?cls ?property ?linktype WHERE {
 					VALUES ?g {
 						<https://lindas.admin.ch/fch/staatskalender>
+    					<https://lindas.admin.ch/sbb/nova>
 					}
 					GRAPH ?g {
 						?subject a ?cls .

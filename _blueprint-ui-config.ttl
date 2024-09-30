@@ -1,0 +1,274 @@
+@prefix : <http://schema.example.org/blueprint-ui-config-initializer/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix blueprintMetaShapes: <https://ld.flux.zazuko.com/shapes/metadata/> .
+@prefix blueprintMetaLink: <https://ld.flux.zazuko.com/link/metadata/> .
+@prefix blueprint: <https://flux.described.at/> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "label" ;
+	sh:path rdfs:label ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/ZoningPlan> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan-detailgroup-Info> .
+
+<https://lod.opentransportdata.swiss/vocab/ZoningPlan> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/link/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2Falliance-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> a sh:PropertyShape, blueprint:Link ;
+	sh:path <https://lod.opentransportdata.swiss/vocab/alliance> ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/ZoningPlan> ;
+	sh:name "alliance" ;
+	sh:class <https://lod.opentransportdata.swiss/vocab/Alliance> .
+
+<https://lod.opentransportdata.swiss/vocab/Alliance> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "ZoningPlan" ;
+	sh:targetNode <https://lod.opentransportdata.swiss/vocab/ZoningPlan> ;
+	blueprint:faIcon "fas fa-map" ;
+	blueprint:colorIndex 2 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FzoningPriceFactor> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "zoningPriceFactor" ;
+	sh:path <https://lod.opentransportdata.swiss/vocab/zoningPriceFactor> ;
+	sh:order 1 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-detailgroup-Info> .
+
+<https://lod.opentransportdata.swiss/vocab/Zone> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-http%3A%2F%2Fschema.org%2Fidentifier> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Identifier" ;
+	sh:path <http://schema.org/identifier> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/link/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FzoningPlan-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan> a sh:PropertyShape, blueprint:Link ;
+	sh:path <https://lod.opentransportdata.swiss/vocab/zoningPlan> ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	sh:name "zoningPlan" ;
+	sh:class <https://lod.opentransportdata.swiss/vocab/ZoningPlan> .
+
+<http://data.example.org/blueprint-ui-config/app/link/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone-http%3A%2F%2Fschema.org%2Fprovider-http%3A%2F%2Fschema.org%2FOrganization> a sh:PropertyShape, blueprint:Link ;
+	sh:path <http://schema.org/provider> ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	sh:name "provider" ;
+	sh:class <http://schema.org/Organization> .
+
+<http://schema.org/Organization> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Zone" ;
+	sh:targetNode <https://lod.opentransportdata.swiss/vocab/Zone> ;
+	blueprint:faIcon "fas fa-map-location" ;
+	blueprint:colorIndex 2 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Telephone" ;
+	sh:path <http://schema.org/telephone> ;
+	sh:order 2 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Person> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
+
+<http://schema.org/Person> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Given Name" ;
+	sh:path <http://schema.org/givenName> ;
+	sh:order 1 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Person> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Family Name" ;
+	sh:path <http://schema.org/familyName> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Person> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> a sh:PropertyShape, blueprint:Link ;
+	sh:path <http://schema.org/memberOf> ;
+	sh:targetClass <http://schema.org/Person> ;
+	sh:name "memberOf" ;
+	sh:class <http://schema.org/OrganizationRole> .
+
+<http://schema.org/OrganizationRole> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Person" ;
+	sh:targetNode <http://schema.org/Person> ;
+	blueprint:faIcon "fas fa-user" ;
+	blueprint:colorIndex 7 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Name" ;
+	sh:path <http://schema.org/name> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/OrganizationRole> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> a sh:PropertyShape, blueprint:Link ;
+	sh:path <http://schema.org/memberOf> ;
+	sh:targetClass <http://schema.org/OrganizationRole> ;
+	sh:name "memberOf" ;
+	sh:class <http://schema.org/GovernmentOrganization> .
+
+<http://schema.org/GovernmentOrganization> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Role" ;
+	sh:targetNode <http://schema.org/OrganizationRole> ;
+	blueprint:faIcon "fas fa-users" ;
+	blueprint:colorIndex 8 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fwww.w3.org%2F2006%2Fvcard%2Fns%23name> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Name" ;
+	sh:path <http://www.w3.org/2006/vcard/ns#name> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Organization> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganization-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganization-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fschema.org%2Fidentifier> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Identifier" ;
+	sh:path <http://schema.org/identifier> ;
+	sh:order 2 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Organization> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganization-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fschema.org%2FalternateName> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Alternate Name" ;
+	sh:path <http://schema.org/alternateName> ;
+	sh:order 1 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/Organization> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganization-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganization> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Organization" ;
+	sh:targetNode <http://schema.org/Organization> ;
+	blueprint:faIcon "fas fa-building" ;
+	blueprint:colorIndex 2 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-http%3A%2F%2Fschema.org%2Fidentifier> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Identifier" ;
+	sh:path <http://schema.org/identifier> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/LocalNetwork> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-detailgroup-Info> .
+
+<https://lod.opentransportdata.swiss/vocab/LocalNetwork> blueprint:showIn blueprint:UI .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2Falliance> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Alliance" ;
+	sh:path <https://lod.opentransportdata.swiss/vocab/alliance> ;
+	sh:order 1 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/LocalNetwork> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/link/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FzoningPlan-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZoningPlan> a sh:PropertyShape, blueprint:Link ;
+	sh:path <https://lod.opentransportdata.swiss/vocab/zoningPlan> ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/LocalNetwork> ;
+	sh:name "zoningPlan" ;
+	sh:class <https://lod.opentransportdata.swiss/vocab/ZoningPlan> .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "LocalNetwork" ;
+	sh:targetNode <https://lod.opentransportdata.swiss/vocab/LocalNetwork> ;
+	blueprint:faIcon "fas fa-diagram-project" ;
+	blueprint:colorIndex 2 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Name" ;
+	sh:path <http://schema.org/name> ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/GovernmentOrganization> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Alternate Name" ;
+	sh:path <http://schema.org/alternateName> ;
+	sh:order 1 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <http://schema.org/GovernmentOrganization> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> a sh:PropertyShape, blueprint:Link ;
+	sh:path <http://schema.org/parentOrganization> ;
+	sh:targetClass <http://schema.org/GovernmentOrganization> ;
+	sh:name "parentOrganization" ;
+	sh:class <http://schema.org/GovernmentOrganization> .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Gov Organization" ;
+	sh:targetNode <http://schema.org/GovernmentOrganization> ;
+	blueprint:faIcon "fas fa-building-columns" ;
+	blueprint:colorIndex 1 ;
+	blueprint:searchPrio 1 .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Label" ;
+	sh:path rdfs:label ;
+	sh:order 0 ;
+	blueprint:showAs blueprintMetaShapes:Plain ;
+	sh:targetClass <https://lod.opentransportdata.swiss/vocab/Alliance> ;
+	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-detailgroup-Info> .
+
+<http://data.example.org/blueprint-ui-config/app/class-detail-group/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
+	rdfs:label "Info" ;
+	sh:order 0 .
+
+<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> a blueprintMetaShapes:ClassMetadataShape ;
+	rdfs:label "Alliance" ;
+	sh:targetNode <https://lod.opentransportdata.swiss/vocab/Alliance> ;
+	blueprint:faIcon "fas fa-building-shield" ;
+	blueprint:colorIndex 2 ;
+	blueprint:searchPrio 1 .
+

@@ -3,16 +3,41 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<https://lod.opentransportdata.swiss/vocab/Alliance> a :Class ;
+   :label "Alliance" ;
+   :icon "fas fa-building-shield" ;
+   :colorIndex 2 ;
+   :searchPrio 1 .
+# <https://lod.opentransportdata.swiss/vocab/CustomerSegment> a :Class ;
+#    :label "CustomerSegment" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
 <http://schema.org/GovernmentOrganization> a :Class ;
+   :label "Gov Organization" ;
+   :icon "fas fa-building-columns" ;
+   :colorIndex 1 ;
+   :searchPrio 1 .
+<https://lod.opentransportdata.swiss/vocab/LocalNetwork> a :Class ;
+   :label "LocalNetwork" ;
+   :icon "fas fa-diagram-project" ;
+   :colorIndex 2 ;
+   :searchPrio 1 .
+<http://schema.org/Organization> a :Class ;
    :label "Organization" ;
    :icon "fas fa-building" ;
-   :colorIndex 1 ;
+   :colorIndex 2 ;
    :searchPrio 1 .
 <http://schema.org/OrganizationRole> a :Class ;
    :label "Role" ;
    :icon "fas fa-users" ;
    :colorIndex 8 ;
    :searchPrio 1 .
+# <https://lod.opentransportdata.swiss/vocab/PayLevel> a :Class ;
+#    :label "PayLevel" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
 <http://schema.org/Person> a :Class ;
    :label "Person" ;
    :icon "fas fa-user" ;
@@ -20,6 +45,31 @@
    :searchPrio 1 .
 # <http://schema.org/PostalAddress> a :Class ;
 #    :label "PostalAddress" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
+# <https://lod.opentransportdata.swiss/vocab/Relation> a :Class ;
+#    :label "Relation" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
+# <https://lod.opentransportdata.swiss/vocab/Tarif> a :Class ;
+#    :label "Tarif" ;
+#    :icon "far fa-circle" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
+<https://lod.opentransportdata.swiss/vocab/Zone> a :Class ;
+   :label "Zone" ;
+   :icon "fas fa-map-location" ;
+   :colorIndex 2 ;
+   :searchPrio 1 .
+<https://lod.opentransportdata.swiss/vocab/ZoningPlan> a :Class ;
+   :label "ZoningPlan" ;
+   :icon "fas fa-map" ;
+   :colorIndex 2 ;
+   :searchPrio 1 .
+# <https://lod.opentransportdata.swiss/vocab/ZoningPriceCharacteristic> a :Class ;
+#    :label "ZoningPriceCharacteristic" ;
 #    :icon "far fa-circle" ;
 #    :colorIndex 1 ;
 #    :searchPrio 1 .
