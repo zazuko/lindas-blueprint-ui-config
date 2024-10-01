@@ -1,0 +1,3 @@
+select * where {
+    <https://register.ld.admin.ch/staatskalender/organization/10000026> <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+} limit 10
