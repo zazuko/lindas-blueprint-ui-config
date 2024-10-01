@@ -50,3 +50,43 @@ curl -i -H "Accept: text/csv" \
      -X GET \
      https://stardog-test.cluster.ldbar.ch/lindas/query
 ```
+
+
+## Blueprint queries
+
+`blueprint-search.rq` - without reasoning (runs fine, returns in 0.7 seconds):
+
+```
+time curl -i -H "Accept: application/n-triples" \
+     -H "Content-Type: application/sparql-query" \
+     --data-binary "@blueprint-search.rq" \
+     -u $SPARQL_USERPASS \
+     -X POST \
+     https://stardog-test.cluster.ldbar.ch/lindas/query
+```
+
+
+`blueprint-search.rq` - with reasoning (Query execution cancelled: Execution time exceeded query timeout 120000):
+
+```
+time curl -i -H "Accept: application/n-triples" \
+     -H "Content-Type: application/sparql-query" \
+     --data-binary "@blueprint-search.rq" \
+     -u $SPARQL_USERPASS \
+     -X POST \
+     https://stardog-test.cluster.ldbar.ch/lindas/query?schema=blueprintSchema
+```
+
+
+Using pragmas with [reasoning-hints](https://docs.stardog.com/operating-stardog/database-administration/managing-query-performance#reasoning-hints) can help to make the query work - but runs slower (returns in 1.4 seconds):
+
+```
+time curl -i -H "Accept: application/n-triples" \
+     -H "Content-Type: application/sparql-query" \
+     --data-binary "@blueprint-search-with-reasoning-pragmas.rq" \
+     -u $SPARQL_USERPASS \
+     -X POST \
+     https://stardog-test.cluster.ldbar.ch/lindas/query?schema=blueprintSchema
+```
+
+Same goes for search with filtering on a class, see `blueprint-search-govorg-with-reasoning-pragmas.rq`

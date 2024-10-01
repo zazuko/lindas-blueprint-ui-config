@@ -1,0 +1,225 @@
+# Search Query - Search without term, page: 0, pageSize: 48
+PREFIX blueprintShape: <https://ld.flux.zazuko.com/shapes/metadata/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://flux.described.at/>
+CONSTRUCT {
+  ?0_metaShape ?0_p ?0_o.
+  :query rdf:type :UiSearchResult.
+  :query :total ?1_count.
+  ?2_fluxIri rdf:type :UiClassCount.
+  ?2_fluxIri :count ?2_count.
+  :query rdf:type :UiSearchResult.
+  :query :result ?3_sub.
+  :query :pageSize ?3_pageSize.
+  :query :pageNumber ?3_pageNumber.
+  ?3_sub rdf:type ?3_type.
+  ?3_sub rdf:type :UiSearchResultItem.
+  ?3_sub :score ?3_score.
+  ?3_sub rdfs:label ?3_label.
+  ?3_sub rdfs:comment ?3_comment.
+}
+WHERE {
+  #pragma reasoning off
+  {
+    { SELECT ?0_metaShape WHERE { ?0_metaShape rdf:type blueprintShape:ClassMetadataShape. } }
+    ?0_metaShape ?0_p ?0_o.
+  }
+  UNION
+  {
+    SELECT (COUNT(DISTINCT ?1_sub) AS ?1_count) WHERE {
+      { 
+        BIND(<https://lod.opentransportdata.swiss/vocab/ZoningPlan> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<https://lod.opentransportdata.swiss/vocab/Zone> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<http://schema.org/Person> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<http://schema.org/OrganizationRole> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<http://schema.org/Organization> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<https://lod.opentransportdata.swiss/vocab/LocalNetwork> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<http://schema.org/GovernmentOrganization> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      UNION
+      {
+        BIND(<https://lod.opentransportdata.swiss/vocab/Alliance> AS ?1_fluxIri)
+        BIND(1  AS ?1_searchPriority)
+        ?1_sub rdf:type ?1_fluxIri.
+        { #pragma reasoning on
+          ?1_sub rdfs:label ?1_label.
+        }
+        OPTIONAL { ?1_sub rdfs:comment ?1_comment. }
+      }
+      BIND(xsd:float(?1_searchPriority) AS ?1_score)
+    }
+  }
+  UNION
+  {
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <https://lod.opentransportdata.swiss/vocab/ZoningPlan>
+        }
+        ?2_s rdf:type <https://lod.opentransportdata.swiss/vocab/ZoningPlan>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <https://lod.opentransportdata.swiss/vocab/Zone>
+        }
+        ?2_s rdf:type <https://lod.opentransportdata.swiss/vocab/Zone>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <http://schema.org/Person>
+        }
+        ?2_s rdf:type <http://schema.org/Person>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <http://schema.org/OrganizationRole>
+        }
+        ?2_s rdf:type <http://schema.org/OrganizationRole>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <http://schema.org/Organization>
+        }
+        ?2_s rdf:type <http://schema.org/Organization>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <https://lod.opentransportdata.swiss/vocab/LocalNetwork>
+        }
+        ?2_s rdf:type <https://lod.opentransportdata.swiss/vocab/LocalNetwork>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <http://schema.org/GovernmentOrganization>
+        }
+        ?2_s rdf:type <http://schema.org/GovernmentOrganization>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+    UNION
+    {
+      SELECT ?2_fluxIri (COUNT(DISTINCT ?2_s) AS ?2_count) WHERE {
+        VALUES ?2_fluxIri {
+          <https://lod.opentransportdata.swiss/vocab/Alliance>
+        }
+        ?2_s rdf:type <https://lod.opentransportdata.swiss/vocab/Alliance>.
+      }
+      GROUP BY ?2_fluxIri
+    }
+  }
+  UNION
+  {
+    {
+      SELECT ?3_sub ?3_type ?3_label ?3_comment ?3_score WHERE {
+        {
+          SELECT DISTINCT ?3_type ?3_score WHERE {
+            ?3_shape rdf:type blueprintShape:ClassMetadataShape;
+              sh:targetNode ?3_type;
+              :searchPrio ?3_searchPriority.
+            BIND(xsd:float(?3_searchPriority) AS ?3_score)
+            FILTER((((((((?3_type = <https://lod.opentransportdata.swiss/vocab/ZoningPlan>) || (?3_type = <https://lod.opentransportdata.swiss/vocab/Zone>)) || (?3_type = <http://schema.org/Person>)) || (?3_type = <http://schema.org/OrganizationRole>)) || (?3_type = <http://schema.org/Organization>)) || (?3_type = <https://lod.opentransportdata.swiss/vocab/LocalNetwork>)) || (?3_type = <http://schema.org/GovernmentOrganization>)) || (?3_type = <https://lod.opentransportdata.swiss/vocab/Alliance>))
+          }
+        }
+        ?3_sub rdf:type ?3_type.
+        { #pragma reasoning on
+          ?3_sub rdfs:label ?3_label.
+        }
+        OPTIONAL { ?3_sub rdfs:comment ?3_comment. }
+      }
+      ORDER BY (?3_score)
+      LIMIT 48
+    }
+    UNION
+    {
+      BIND(0  AS ?3_pageNumber)
+      BIND(48  AS ?3_pageSize)
+    }
+  }
+}
