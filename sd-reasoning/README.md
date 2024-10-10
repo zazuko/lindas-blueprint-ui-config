@@ -90,3 +90,22 @@ time curl -i -H "Accept: application/n-triples" \
 ```
 
 Same goes for search with filtering on a class, see `blueprint-search-govorg-with-reasoning-pragmas.rq`
+
+
+## Removing the schema from Stardog
+
+```
+stardog reasoning schema --remove blueprintSchema -u $USER -- https://stardog-test.cluster.ldbar.ch:443/lindas
+```
+
+Verify by listing the reasoning schemas:
+```
+stardog reasoning schema --list https://stardog-test.cluster.ldbar.ch:443/lindas -u $USER
+```
+
+## Clearing the Named-Graph with schema.org snippet
+
+```
+touch empty.nt
+curl -i -X PUT -T empty.nt -u $SPARQL_USERPASS -H "Content-Type: application/n-triples" $SPARQL_GSP_ENDPOINT?graph=http%3A%2F%2Fexample.org%2Fgraph%2Flindas%2Fblueprint-reasoning-schema
+```
