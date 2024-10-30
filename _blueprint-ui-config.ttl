@@ -78,78 +78,6 @@
 	blueprint:colorIndex 2 ;
 	blueprint:searchPrio 1 .
 
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Telephone" ;
-	sh:path <http://schema.org/telephone> ;
-	sh:order 2 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/Person> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-
-<http://schema.org/Person> blueprint:showIn blueprint:UI .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Info" ;
-	sh:order 0 .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Given Name" ;
-	sh:path <http://schema.org/givenName> ;
-	sh:order 1 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/Person> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Family Name" ;
-	sh:path <http://schema.org/familyName> ;
-	sh:order 0 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/Person> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> a sh:PropertyShape, blueprint:Link ;
-	sh:path <http://schema.org/memberOf> ;
-	sh:targetClass <http://schema.org/Person> ;
-	sh:name "memberOf" ;
-	sh:class <http://schema.org/OrganizationRole> .
-
-<http://schema.org/OrganizationRole> blueprint:showIn blueprint:UI .
-
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> a blueprintMetaShapes:ClassMetadataShape ;
-	rdfs:label "Person" ;
-	sh:targetNode <http://schema.org/Person> ;
-	blueprint:faIcon "fas fa-user" ;
-	blueprint:colorIndex 7 ;
-	blueprint:searchPrio 1 .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Name" ;
-	sh:path <http://schema.org/name> ;
-	sh:order 0 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/OrganizationRole> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Info" ;
-	sh:order 0 .
-
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> a sh:PropertyShape, blueprint:Link ;
-	sh:path <http://schema.org/memberOf> ;
-	sh:targetClass <http://schema.org/OrganizationRole> ;
-	sh:name "memberOf" ;
-	sh:class <http://schema.org/GovernmentOrganization> .
-
-<http://schema.org/GovernmentOrganization> blueprint:showIn blueprint:UI .
-
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> a blueprintMetaShapes:ClassMetadataShape ;
-	rdfs:label "Role" ;
-	sh:targetNode <http://schema.org/OrganizationRole> ;
-	blueprint:faIcon "fas fa-users" ;
-	blueprint:colorIndex 8 ;
-	blueprint:searchPrio 1 .
-
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fwww.w3.org%2F2006%2Fvcard%2Fns%23name> a blueprintMetaShapes:ClassDetailShape ;
 	rdfs:label "Name" ;
 	sh:path <http://www.w3.org/2006/vcard/ns#name> ;
@@ -218,39 +146,6 @@
 	sh:targetNode <https://lod.opentransportdata.swiss/vocab/LocalNetwork> ;
 	blueprint:faIcon "fas fa-diagram-project" ;
 	blueprint:colorIndex 2 ;
-	blueprint:searchPrio 1 .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Name" ;
-	sh:path <http://schema.org/name> ;
-	sh:order 0 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/GovernmentOrganization> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Info" ;
-	sh:order 0 .
-
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> a blueprintMetaShapes:ClassDetailShape ;
-	rdfs:label "Alternate Name" ;
-	sh:path <http://schema.org/alternateName> ;
-	sh:order 1 ;
-	blueprint:showAs blueprintMetaShapes:Plain ;
-	sh:targetClass <http://schema.org/GovernmentOrganization> ;
-	sh:group <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
-
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> a sh:PropertyShape, blueprint:Link ;
-	sh:path <http://schema.org/parentOrganization> ;
-	sh:targetClass <http://schema.org/GovernmentOrganization> ;
-	sh:name "parentOrganization" ;
-	sh:class <http://schema.org/GovernmentOrganization> .
-
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> a blueprintMetaShapes:ClassMetadataShape ;
-	rdfs:label "Gov Organization" ;
-	sh:targetNode <http://schema.org/GovernmentOrganization> ;
-	blueprint:faIcon "fas fa-building-columns" ;
-	blueprint:colorIndex 1 ;
 	blueprint:searchPrio 1 .
 
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> a blueprintMetaShapes:ClassDetailShape ;

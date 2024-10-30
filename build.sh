@@ -12,7 +12,7 @@ output_file="config.nt"
 
 # Concat ntriples from the relevant config parts
 riot --out=ntriples _blueprint-ui-config.ttl >> "$output_file"
-riot --out=ntriples hierarchies.ttl >> "$output_file"
+# riot --out=ntriples hierarchies.ttl >> "$output_file"
 
 
 # Run validation

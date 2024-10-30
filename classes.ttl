@@ -13,11 +13,11 @@
 #    :icon "far fa-circle" ;
 #    :colorIndex 1 ;
 #    :searchPrio 1 .
-<http://schema.org/GovernmentOrganization> a :Class ;
-   :label "Gov Organization" ;
-   :icon "fas fa-building-columns" ;
-   :colorIndex 1 ;
-   :searchPrio 1 .
+# <http://schema.org/GovernmentOrganization> a :Class ;
+#    :label "Gov Organization" ;
+#    :icon "fas fa-building-columns" ;
+#    :colorIndex 1 ;
+#    :searchPrio 1 .
 <https://lod.opentransportdata.swiss/vocab/LocalNetwork> a :Class ;
    :label "LocalNetwork" ;
    :icon "fas fa-diagram-project" ;
@@ -28,21 +28,21 @@
    :icon "fas fa-building" ;
    :colorIndex 2 ;
    :searchPrio 1 .
-<http://schema.org/OrganizationRole> a :Class ;
-   :label "Role" ;
-   :icon "fas fa-users" ;
-   :colorIndex 8 ;
-   :searchPrio 1 .
+# <http://schema.org/OrganizationRole> a :Class ;
+#    :label "Role" ;
+#    :icon "fas fa-users" ;
+#    :colorIndex 8 ;
+#    :searchPrio 1 .
 # <https://lod.opentransportdata.swiss/vocab/PayLevel> a :Class ;
 #    :label "PayLevel" ;
 #    :icon "far fa-circle" ;
 #    :colorIndex 1 ;
 #    :searchPrio 1 .
-<http://schema.org/Person> a :Class ;
-   :label "Person" ;
-   :icon "fas fa-user" ;
-   :colorIndex 7 ;
-   :searchPrio 1 .
+# <http://schema.org/Person> a :Class ;
+#    :label "Person" ;
+#    :icon "fas fa-user" ;
+#    :colorIndex 7 ;
+#    :searchPrio 1 .
 # <http://schema.org/PostalAddress> a :Class ;
 #    :label "PostalAddress" ;
 #    :icon "far fa-circle" ;

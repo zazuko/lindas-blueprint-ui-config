@@ -16,20 +16,6 @@
 		:path rdfs:label ;
 	] .
 
-<http://schema.org/GovernmentOrganization> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> .
-
-<http://data.example.org/blueprint-ui-config-initializer/detailgroup/GovernmentOrganization-info-http%3A%2F%2Fschema.org%2FGovernmentOrganization> :label "Info" ;
-	:order 0 ;
-	:detail [
-		:label "Alternate Name" ;
-		:order 1 ;
-		:path <http://schema.org/alternateName> ;
-	], [
-		:label "Name" ;
-		:order 0 ;
-		:path <http://schema.org/name> ;
-	] .
-
 <https://lod.opentransportdata.swiss/vocab/LocalNetwork> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/LocalNetwork-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> .
 
 <http://data.example.org/blueprint-ui-config-initializer/detailgroup/LocalNetwork-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> :label "Info" ;
@@ -80,34 +66,6 @@
 	# 	:label "screenLabel" ;
 	# 	:order 0 ;
 	# 	:path <https://lod.opentransportdata.swiss/vocab/screenLabel> ;
-	] .
-
-<http://schema.org/OrganizationRole> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> .
-
-<http://data.example.org/blueprint-ui-config-initializer/detailgroup/OrganizationRole-info-http%3A%2F%2Fschema.org%2FOrganizationRole> :label "Info" ;
-	:order 0 ;
-	:detail [
-		:label "Name" ;
-		:order 0 ;
-		:path <http://schema.org/name> ;
-	] .
-
-<http://schema.org/Person> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Person-info-http%3A%2F%2Fschema.org%2FPerson> .
-
-<http://data.example.org/blueprint-ui-config-initializer/detailgroup/Person-info-http%3A%2F%2Fschema.org%2FPerson> :label "Info" ;
-	:order 0 ;
-	:detail [
-		:label "Family Name" ;
-		:order 0 ;
-		:path <http://schema.org/familyName> ;
-	], [
-		:label "Given Name" ;
-		:order 1 ;
-		:path <http://schema.org/givenName> ;
-	], [
-		:label "Telephone" ;
-		:order 2 ;
-		:path <http://schema.org/telephone> ;
 	] .
 
 <https://lod.opentransportdata.swiss/vocab/Zone> :detailGroup <http://data.example.org/blueprint-ui-config-initializer/detailgroup/Zone-info-https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> .

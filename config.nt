@@ -59,67 +59,6 @@
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> <https://flux.described.at/faIcon> "fas fa-map-location" .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> <https://flux.described.at/colorIndex> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FZone> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/2000/01/rdf-schema#label> "Telephone" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/ns/shacl#path> <http://schema.org/telephone> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/ns/shacl#order> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Person> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2Ftelephone> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-<http://schema.org/Person> <https://flux.described.at/showIn> <https://flux.described.at/UI> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> <http://www.w3.org/2000/01/rdf-schema#label> "Info" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/2000/01/rdf-schema#label> "Given Name" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/ns/shacl#path> <http://schema.org/givenName> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/ns/shacl#order> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Person> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FgivenName> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/2000/01/rdf-schema#label> "Family Name" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/ns/shacl#path> <http://schema.org/familyName> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Person> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FfamilyName> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FPerson-detailgroup-Info> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://flux.described.at/Link> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/ns/shacl#path> <http://schema.org/memberOf> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Person> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/ns/shacl#name> "memberOf" .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FPerson-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/ns/shacl#class> <http://schema.org/OrganizationRole> .
-<http://schema.org/OrganizationRole> <https://flux.described.at/showIn> <https://flux.described.at/UI> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassMetadataShape> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <http://www.w3.org/ns/shacl#targetNode> <http://schema.org/Person> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <https://flux.described.at/faIcon> "fas fa-user" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <https://flux.described.at/colorIndex> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FPerson> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/2000/01/rdf-schema#label> "Name" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#path> <http://schema.org/name> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/OrganizationRole> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> <http://www.w3.org/2000/01/rdf-schema#label> "Info" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FOrganizationRole-detailgroup-Info> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://flux.described.at/Link> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#path> <http://schema.org/memberOf> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/OrganizationRole> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#name> "memberOf" .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FOrganizationRole-http%3A%2F%2Fschema.org%2FmemberOf-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#class> <http://schema.org/GovernmentOrganization> .
-<http://schema.org/GovernmentOrganization> <https://flux.described.at/showIn> <https://flux.described.at/UI> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassMetadataShape> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/2000/01/rdf-schema#label> "Role" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <http://www.w3.org/ns/shacl#targetNode> <http://schema.org/OrganizationRole> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <https://flux.described.at/faIcon> "fas fa-users" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <https://flux.described.at/colorIndex> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FOrganizationRole> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fwww.w3.org%2F2006%2Fvcard%2Fns%23name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fwww.w3.org%2F2006%2Fvcard%2Fns%23name> <http://www.w3.org/2000/01/rdf-schema#label> "Name" .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FOrganization-http%3A%2F%2Fwww.w3.org%2F2006%2Fvcard%2Fns%23name> <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2006/vcard/ns#name> .
@@ -180,35 +119,6 @@
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> <https://flux.described.at/faIcon> "fas fa-diagram-project" .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> <https://flux.described.at/colorIndex> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FLocalNetwork> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/2000/01/rdf-schema#label> "Name" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#path> <http://schema.org/name> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2Fname> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> <http://www.w3.org/2000/01/rdf-schema#label> "Info" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> <http://www.w3.org/ns/shacl#order> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/2000/01/rdf-schema#label> "Alternate Name" .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/ns/shacl#path> <http://schema.org/alternateName> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/ns/shacl#order> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <https://flux.described.at/showAs> <https://ld.flux.zazuko.com/shapes/metadata/Plain> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/class-detail-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FalternateName> <http://www.w3.org/ns/shacl#group> <http://data.example.org/blueprint-ui-config/app/class-detail-group/http%3A%2F%2Fschema.org%2FGovernmentOrganization-detailgroup-Info> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://flux.described.at/Link> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#path> <http://schema.org/parentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#name> "parentOrganization" .
-<http://data.example.org/blueprint-ui-config/app/link/http%3A%2F%2Fschema.org%2FGovernmentOrganization-http%3A%2F%2Fschema.org%2FparentOrganization-http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#class> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassMetadataShape> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Gov Organization" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <http://www.w3.org/ns/shacl#targetNode> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <https://flux.described.at/faIcon> "fas fa-building-columns" .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <https://flux.described.at/colorIndex> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://data.example.org/blueprint-ui-config/app/class-metadata-shape/http%3A%2F%2Fschema.org%2FGovernmentOrganization> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ld.flux.zazuko.com/shapes/metadata/ClassDetailShape> .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> <http://www.w3.org/2000/01/rdf-schema#label> "Label" .
 <http://data.example.org/blueprint-ui-config/app/class-detail-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance-http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label> <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#label> .
@@ -225,42 +135,3 @@
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> <https://flux.described.at/faIcon> "fas fa-building-shield" .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> <https://flux.described.at/colorIndex> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://data.example.org/blueprint-ui-config/app/class-metadata-shape/https%3A%2F%2Flod.opentransportdata.swiss%2Fvocab%2FAlliance> <https://flux.described.at/searchPrio> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<https://flux.described.at/Aggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<https://flux.described.at/Aggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Aggregate" .
-<https://flux.described.at/Aggregate> <http://www.w3.org/2000/01/rdf-schema#comment> "An aggregate is a collection of things, such as a list of items, a set of items, or a group of items." .
-<https://flux.described.at/Composition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<https://flux.described.at/Composition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://flux.described.at/Aggregate> .
-<https://flux.described.at/Composition> <http://www.w3.org/2000/01/rdf-schema#label> "Composition" .
-<https://flux.described.at/Composition> <http://www.w3.org/2000/01/rdf-schema#comment> "A composition is a collection of things, that compose a higher level thing." .
-<https://flux.described.at/Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<https://flux.described.at/Container> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://flux.described.at/Aggregate> .
-<https://flux.described.at/Container> <http://www.w3.org/2000/01/rdf-schema#label> "Container" .
-<https://flux.described.at/Container> <http://www.w3.org/2000/01/rdf-schema#comment> "A container is a collection of things, that are contained in a another thing but it is not composed by them." .
-<http://data.example.org//blueprint/app/OrganizationHierarchyShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
-<http://data.example.org//blueprint/app/OrganizationHierarchyShape> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
-<http://data.example.org//blueprint/app/OrganizationHierarchyShape> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/GovernmentOrganization> .
-<http://data.example.org//blueprint/app/OrganizationHierarchyShape> <http://www.w3.org/ns/shacl#group> <http://data.example.org//blueprint/app/OrganizationTree> .
-_:B613c5e1cacaed1c85259999af12e5793 <http://www.w3.org/ns/shacl#name> " " .
-_:Bfe5f2234056fa08035edde132657fa48 <http://www.w3.org/ns/shacl#inversePath> <http://schema.org/memberOf> .
-_:B613c5e1cacaed1c85259999af12e5793 <http://www.w3.org/ns/shacl#path> _:Bfe5f2234056fa08035edde132657fa48 .
-_:B613c5e1cacaed1c85259999af12e5793 <http://www.w3.org/ns/shacl#node> <http://data.example.org//blueprint/app/RoleHierarchyShape> .
-<http://data.example.org//blueprint/app/OrganizationHierarchyShape> <http://www.w3.org/ns/shacl#property> _:B613c5e1cacaed1c85259999af12e5793 .
-<http://data.example.org//blueprint/app/RoleHierarchyShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
-<http://data.example.org//blueprint/app/RoleHierarchyShape> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
-<http://data.example.org//blueprint/app/RoleHierarchyShape> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/OrganizationRole> .
-<http://data.example.org//blueprint/app/RoleHierarchyShape> <http://www.w3.org/ns/shacl#group> <http://data.example.org//blueprint/app/OrganizationTree> .
-_:Bfd57467619df7b6a29f8032b1ee4c8e2 <http://www.w3.org/ns/shacl#name> " " .
-_:Bdea1c088b6b55358bcd3c047716e533e <http://www.w3.org/ns/shacl#inversePath> <http://schema.org/memberOf> .
-_:Bfd57467619df7b6a29f8032b1ee4c8e2 <http://www.w3.org/ns/shacl#path> _:Bdea1c088b6b55358bcd3c047716e533e .
-_:Bfd57467619df7b6a29f8032b1ee4c8e2 <http://www.w3.org/ns/shacl#node> <http://data.example.org//blueprint/app/PersonHierarchyShape> .
-<http://data.example.org//blueprint/app/RoleHierarchyShape> <http://www.w3.org/ns/shacl#property> _:Bfd57467619df7b6a29f8032b1ee4c8e2 .
-<http://data.example.org//blueprint/app/PersonHierarchyShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
-<http://data.example.org//blueprint/app/PersonHierarchyShape> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
-<http://data.example.org//blueprint/app/PersonHierarchyShape> <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Person> .
-<http://data.example.org//blueprint/app/PersonHierarchyShape> <http://www.w3.org/ns/shacl#group> <http://data.example.org//blueprint/app/OrganizationTree> .
-<http://data.example.org//blueprint/app/OrganizationTree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#Group> .
-<http://data.example.org//blueprint/app/OrganizationTree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://flux.described.at/Hierarchy> .
-<http://data.example.org//blueprint/app/OrganizationTree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://flux.described.at/Container> .
-<http://data.example.org//blueprint/app/OrganizationTree> <http://www.w3.org/2000/01/rdf-schema#label> "Organizations" .
-<http://data.example.org//blueprint/app/OrganizationTree> <http://www.w3.org/2000/01/rdf-schema#comment> "Information about People and Organization." .
-<http://data.example.org//blueprint/app/OrganizationTree> <https://flux.described.at/hasRoot> <http://data.example.org//blueprint/app/OrganizationHierarchyShape> .
