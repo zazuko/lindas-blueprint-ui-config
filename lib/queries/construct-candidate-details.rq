@@ -17,7 +17,6 @@ CONSTRUCT {
 		    {
 		        SELECT distinct ?cls ?property WHERE {
 					VALUES ?g {
-						<https://lindas.admin.ch/fch/staatskalender>
     					<https://lindas.admin.ch/sbb/nova>
 					}
 					GRAPH ?g {

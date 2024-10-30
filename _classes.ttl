@@ -13,11 +13,6 @@
    :icon "far fa-circle" ;
    :colorIndex 1 ;
    :searchPrio 1 .
-<http://schema.org/GovernmentOrganization> a :Class ;
-   :label "GovernmentOrganization" ;
-   :icon "far fa-circle" ;
-   :colorIndex 1 ;
-   :searchPrio 1 .
 <https://lod.opentransportdata.swiss/vocab/LocalNetwork> a :Class ;
    :label "LocalNetwork" ;
    :icon "far fa-circle" ;
@@ -28,23 +23,8 @@
    :icon "far fa-circle" ;
    :colorIndex 1 ;
    :searchPrio 1 .
-<http://schema.org/OrganizationRole> a :Class ;
-   :label "OrganizationRole" ;
-   :icon "far fa-circle" ;
-   :colorIndex 1 ;
-   :searchPrio 1 .
 <https://lod.opentransportdata.swiss/vocab/PayLevel> a :Class ;
    :label "PayLevel" ;
-   :icon "far fa-circle" ;
-   :colorIndex 1 ;
-   :searchPrio 1 .
-<http://schema.org/Person> a :Class ;
-   :label "Person" ;
-   :icon "far fa-circle" ;
-   :colorIndex 1 ;
-   :searchPrio 1 .
-<http://schema.org/PostalAddress> a :Class ;
-   :label "PostalAddress" ;
    :icon "far fa-circle" ;
    :colorIndex 1 ;
    :searchPrio 1 .
